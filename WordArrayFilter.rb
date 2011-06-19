@@ -1,23 +1,35 @@
 class WordArrayFilter
 
-  def getWordsWithXLetter(numberOfLetter, wordArray)
-    acceptedWordArray = []
-    wordArray.each do |word|
+  def get_words_with_x_letter(numberOfLetter, words)
+    acceptedWords = Array.new
+    words.each do |word|
       next if (word.length != numberOfLetter)
-      acceptedWordArray << word
+      acceptedWords << word
     end
 
-    return acceptedWordArray
+    return acceptedWords
   end
 
-  def getWordsWithLessThanXLetter(numberOfLetter, wordArray)
-    acceptedWordArray = []
+  def get_words_with_less_than_x_letter(numberOfLetter, words)
+    acceptedWords = Array.new
 
-    wordArray.each do |word|
+    words.each do |word|
       next if (word.length >= numberOfLetter)
-      acceptedWordArray << word
+      acceptedWords << word
     end
 
-    return acceptedWordArray
+    return acceptedWords
   end
+
+  def get_words_that_starts_with_letter(letter, words)
+    acceptedWords = Array.new
+    words.each do |word|
+      next if (!word.downcase.start_with? letter)
+      acceptedWords << word
+    end
+
+    return acceptedWords
+  end
+
+
 end

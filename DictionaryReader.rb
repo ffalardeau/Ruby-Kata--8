@@ -1,7 +1,7 @@
 class DictionaryReader
   attr_reader :words
 
-  def getAllWords
+  def get_all_words
     return @words
   end
 
