@@ -2,7 +2,7 @@ Francis Falardeau
 
 My programs are written in Ruby 1.9
 From my understanding the use of require_relative might not be backward compatible with previous version of Ruby.
-Code standards : I have user snake_case for methods name and CamelCase for classes and variables (This is what I found searching for Ruby coding standards)
+Code standards : I have used snake_case for methods name and CamelCase for classes and variables (This is what I found searching for Ruby coding standards)
 
 
 The "wordlist.txt" file I received has 45433 lines, but my program only read 45425 words ...
