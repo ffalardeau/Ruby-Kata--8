@@ -1,7 +1,9 @@
-Hypothesis 
+Francis Falardeau
 
 My programs are written in Ruby 1.9
 From my understanding the use of require_relative might not be backward compatible with previous version of Ruby.
+Code standards : I have user snake_case for methods name and CamelCase for classes and variables (This is what I found searching for Ruby coding standards)
+
 
 The "wordlist.txt" file I received has 45433 lines, but my program only read 45425 words ...
 The first and last word are correct (They are verified by an RSpec test)
@@ -39,6 +41,14 @@ My Optimized solution consist in storing the potential words to be assemble with
 real	0m0.204s
 user	0m0.172s
 sys	0m0.024s
+
+In conclusion, the Terrible algorithm demanded a lot less of data manipulation but there was a great price to pay in performance. Seems like my Readable Solution might be the less readable of the three. There was a lot of data manipulation and while the different logic are hidden in objects, the actual finding of assembled word is the most complicated to read and to explain. This is more of an half way through an Optimization of the Terrible algorithm and readability. The Optimized solution re-using most of the objects of the Readable solution is probably the most readable as the data manipulation is fairly simple and the algorithm seems to me to be the easier to read. 
+
+The solutions can be runned by using the main.rb file
+The Readable and Optimized solution are triggered there.
+Right now the Optimized solution is commented out. 
+I used the command "time ruby main.rb" to get the statistics shown above. 
+You can also use the specs PerformanceOptimizedKataEight_spec.rb and PerformanceReadableKataEight_spec.rb showing the time elapsed for the tests.
 
 
 

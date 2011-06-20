@@ -1,7 +1,7 @@
 require "../ReadableKataEight"
 
-describe DictionaryReader, "#execute" do
+describe ReadableKataEight, "#execute" do
   it "returns performance" do
-    ReadableKataEight.new.execute("/wordlist.txt")
+    ReadableKataEight.new.execute("/wordlist.txt", 6)
   end
 end
