@@ -1,43 +1,38 @@
 require 'spec_helper'
 
 describe DictionaryReader, "#get_all_words" do
-  it "returns 0 words for an empty dictionary" do
-    dictionaryReader = DictionaryReader.new
-    dictionaryReader.read(File.dirname(__FILE__)+"/../emptywordlist.txt")
-    dictionaryReader.get_all_words.count.should == 0
+  context 'when the dictionary is empty' do
+    it 'should return 0 words' do
+      subject.read(File.dirname(__FILE__)+"/../emptywordlist.txt")
+      expect(subject.get_all_words.count).to eq(0)
+    end
   end
-end
 
-describe DictionaryReader, "#get_all_words" do
-  it "returns 0 words if dictionary not found" do
-    dictionaryReader = DictionaryReader.new
-    dictionaryReader.read("")
-    dictionaryReader.get_all_words.count.should == 0
+  context 'when the dictionary is not found' do
+    it 'should return 0 words' do
+      subject.read("")
+      expect(subject.get_all_words.count).to eq(0)
+    end
   end
-end
 
-describe DictionaryReader, "#get_all_words" do
-  it "returns 45433 words if dictionary provided found" do
-    dictionaryReader = DictionaryReader.new
-    dictionaryReader.read(File.dirname(__FILE__)+"/../wordlist.txt")
-    dictionaryReader.get_all_words.count.should == 45433
+  context 'when the dictionay is found and not empty' do
+    before(:each) do
+      subject.read(File.dirname(__FILE__)+"/../wordlist.txt")
+    end
+
+    it "should have the same number of words as it's source" do
+      expect(subject.get_all_words.count).to eq(45433)
+    end
+
+    it "should have the same first word as it's source" do
+      expect(subject.get_all_words[0]).to eq("Aarhus")
+    end
+
+    it "should have the same last word as it's source" do
+      words = subject.get_all_words
+      expect(words[words.count - 1]).to eq("Zurich")
+    end
   end
-end
 
-describe DictionaryReader, "#get_all_words" do
-  it "first word of list provided should be Aarhus" do
-    dictionaryReader = DictionaryReader.new
-    dictionaryReader.read(File.dirname(__FILE__)+"/../wordlist.txt")
-    dictionaryReader.get_all_words[0].should == "Aarhus"
-  end
-end
 
-describe DictionaryReader, "#get_all_words" do
-  it "last word of list provided should be Zurich" do
-    dictionaryReader = DictionaryReader.new
-    dictionaryReader.read(File.dirname(__FILE__)+"/../wordlist.txt")
-    words = dictionaryReader.get_all_words
-    words[words.count - 1].should == "Zurich"
-  end
 end
-
