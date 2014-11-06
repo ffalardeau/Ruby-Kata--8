@@ -1,4 +1,4 @@
-require "../AssembledWordFinder"
+require 'spec_helper'
 
 describe AssembledWordFinder, "#find" do
   it "returns 0 word that was assembled from 2 smaller words" do

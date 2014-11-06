@@ -1,4 +1,4 @@
-require "../ReadableKataEight"
+require 'spec_helper'
 
 describe ReadableKataEight, "#execute" do
   it "returns performance" do

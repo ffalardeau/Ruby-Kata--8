@@ -1,4 +1,4 @@
-require "../WordArrayFilter"
+require 'spec_helper'
 
 describe WordArrayFilter, "#get_words_with_x_letter" do
   it "returns 2 words for a list containing 2 six letter words" do

@@ -1,4 +1,4 @@
-require "../DictionaryReader"
+require 'spec_helper'
 
 describe DictionaryReader, "#get_all_words" do
   it "returns 0 words for an empty dictionary" do
