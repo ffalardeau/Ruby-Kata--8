@@ -7,7 +7,7 @@ class WordArrayFilter
       acceptedWords << word
     end
 
-    return acceptedWords
+    acceptedWords
   end
 
   def get_words_with_less_than_x_letter(numberOfLetter, words)
@@ -18,7 +18,7 @@ class WordArrayFilter
       acceptedWords << word
     end
 
-    return acceptedWords
+    acceptedWords
   end
 
   def get_words_that_starts_with_letter(letter, words)
@@ -28,7 +28,7 @@ class WordArrayFilter
       acceptedWords << word
     end
 
-    return acceptedWords
+    acceptedWords
   end
 
 

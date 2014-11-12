@@ -1,0 +1,5 @@
+require_relative '../AssembledWordFinder'
+require_relative '../DictionaryReader'
+require_relative '../WordArrayFilter'
+require_relative '../ReadableKataEight'
+require_relative '../OptimizeKataEight'

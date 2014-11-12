@@ -2,7 +2,7 @@ class DictionaryReader
   attr_reader :words
 
   def get_all_words
-    return @words
+    @words
   end
 
   def read(path)
